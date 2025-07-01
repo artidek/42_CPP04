@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:34:23 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 21:55:57 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/01 22:37:06 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Animal(const Animal& copy);
 	Animal& operator=(const Animal& copy);
 	virtual ~Animal(void);
-	virtual void makeSound(void);
+	virtual void makeSound(void) const;
 	virtual std::string getType(void) const;
 };
 

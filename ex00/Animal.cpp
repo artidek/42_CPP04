@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:59:21 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 21:58:05 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/01 22:38:12 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Animal::~Animal(void)
 	std::cout << "Animal destructor called\n";
 }
 
-void Animal::makeSound(void)
+void Animal::makeSound(void) const
 {
 	std::cout << this->_sound << std::endl;
 }
