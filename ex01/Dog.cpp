@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:09:56 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 12:53:30 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:43:26 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ Dog::~Dog(void)
 	std::cout << "Dog destructor called\n";
 }
 
-Dog& Dog::operator=(Dog& copy)
+Dog& Dog::operator=(const Dog& copy)
 {
 	if (this != &copy)
 	{
 		this->_type = copy.getType();
+		delete this->_brain;
 		this->_brain = copy.getBrain();
 	}
 	return *this;

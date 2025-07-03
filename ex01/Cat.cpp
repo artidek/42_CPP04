@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 21:16:43 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 12:53:51 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:42:46 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ Cat::~Cat(void)
 	std::cout << "Cat destructor called\n";
 }
 
-Cat& Cat::operator=(Cat& copy)
+Cat& Cat::operator=(const Cat& copy)
 {
 	if (this != &copy)
 	{
 		this->_type = copy.getType();
-		this->_brain = copy.getBrain();
+		delete this->_brain;
+		this->_brain = new Brain(*copy.getBrain());
 	}
 	return *this;
 }

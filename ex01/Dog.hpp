@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:07:57 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 11:47:01 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:44:17 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : virtual public Animal
 	Dog(void);
 	Dog(const std::string &name);
 	Dog(const Dog &copy);
-	Dog& operator=(Dog& copy);
+	Dog& operator=(const Dog& copy);
 	virtual ~Dog(void);
 };
 
