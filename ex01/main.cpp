@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 23:15:21 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 13:45:04 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:29:25 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main(void)
 	*dog = *anotherDog;
 	std::cout << "The dog address is " << dog << " and the dog has an idea " << dog->getIdea(0) << std::endl;
 	std::cout << "The another dog address is " << anotherDog << " and the another dog has an idea " << anotherDog->getIdea(0) << std::endl;
+	Animal* animal = new Animal();
 	delete dog;
 	delete anotherDog;
 	return 0;

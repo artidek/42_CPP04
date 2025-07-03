@@ -3,26 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:09:56 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/02 10:25:29 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:26:31 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : Animal()
 {
 	std::cout << "Dog default constructor called\n";
 	this->_sound = "Woof";
-}
-
-Dog::Dog(const std::string& type) : Animal("Dog"), _type(type)
-{
-	std::cout << "Dog constructor called\n";
-	this->_sound = "Woof";
-}
+	this->_type = "dog";
+} 
 
 Dog::Dog(const Dog& copy) : Animal(copy)
 {
@@ -34,23 +29,23 @@ Dog::~Dog(void)
 	std::cout << "Dog destructor called\n";
 }
 
-Dog& Dog::operator=(Dog& copy)
+Dog& Dog::operator=(const Dog& copy)
 {
 	if (this != &copy)
-		this->_type = copy.getName();
+	{
+		this->_type = copy.getType();
+		delete this->_brain;
+		this->_brain = copy.getBrain();
+	}
 	return *this;
 }
 
-std::string	Dog::getName(void)
-{
-	return this->_type;
-}
+Brain* Dog::getBrain(void) const {return Animal::getBrain();};
 
-std::ostream& operator<<(std::ostream& o, Dog& dog)
-{
-	o << "Animal type: "
-	<< dog.getType()
-	<< " Dog type: "
-	<< dog.getName();
-	return o;
-}
+void Dog::makeSound(void) const {Animal::makeSound();};
+
+std::string Dog::getType(void) const {return Animal::getType();};
+
+void Dog::setIdea(const std::string& idea) {Animal::setIdea(idea);};
+
+std::string Dog::getIdea(const int ideaIndex) const {return Animal::getIdea(ideaIndex);};

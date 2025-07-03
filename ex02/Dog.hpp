@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:07:57 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/02 11:01:14 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:28:01 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 # define DOG_H
 
 # include "Animal.hpp"
-#include <ostream>
 
-class Dog : virtual public Animal
+class Dog : public Animal
 {
-  protected:
-	std::string _type;
-
+protected:
+	Brain* getBrain(void) const;
   public:
 	Dog(void);
 	Dog(const std::string &name);
 	Dog(const Dog &copy);
-	Dog& operator=(Dog& copy);
+	Dog& operator=(const Dog& copy);
 	virtual ~Dog(void);
-	std::string getName(void);
-	void makeSound(void) const {std::cout << "Woof\n";};
+	void makeSound(void) const;
+	std::string getType(void) const;
+	void setIdea(const std::string& idea);
+	std::string getIdea(const int ideaIndex) const;
 };
-
-std::ostream& operator<<(std::ostream &o, Dog &dog);
 
 #endif

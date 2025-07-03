@@ -3,26 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 21:16:43 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/02 10:25:43 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:23:51 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat default constructor called\n";
 	this->_sound = "Meow";
-}
-
-Cat::Cat(const std::string& type) : Animal("Cat"), _type(type)
-{
-	std::cout << "Cat constructor called\n";
-	this->_sound = "Meow";
-}
+	this->_type = "cat";
+} 
 
 Cat::Cat(const Cat& copy) : Animal(copy)
 {
@@ -34,23 +29,23 @@ Cat::~Cat(void)
 	std::cout << "Cat destructor called\n";
 }
 
-Cat& Cat::operator=(Cat& copy)
+Cat& Cat::operator=(const Cat& copy)
 {
 	if (this != &copy)
-		this->_type = copy.getName();
+	{
+		this->_type = copy.getType();
+		delete this->_brain;
+		this->_brain = new Brain(*copy.getBrain());
+	}
 	return *this;
 }
 
-std::string	Cat::getName(void)
-{
-	return this->_type;
-}
+Brain* Cat::getBrain(void) const {return Animal::getBrain();};
 
-std::ostream& operator<<(std::ostream& o, Cat& cat)
-{
-	o << "Animal type: "
-	<< cat.getType()
-	<< " Cat type: "
-	<< cat.getName();
-	return o;
-}
+void Cat::makeSound(void) const {Animal::makeSound();};
+
+std::string Cat::getType(void) const {return Animal::getType();};
+
+void Cat::setIdea(const std::string& idea) {Animal::setIdea(idea);};
+
+std::string Cat::getIdea(const int ideaIndex) const {return Animal::getIdea(ideaIndex);};

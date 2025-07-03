@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aobshatk <aobshatk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:17:36 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/02 11:01:12 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:28:04 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 # define CAT_H
 
 # include "Animal.hpp"
-#include <ostream>
 
-class Cat : virtual public Animal
+class Cat : public Animal
 {
   protected:
-	std::string _type;
-
+	Brain* getBrain(void) const;
   public:
 	Cat(void);
 	Cat(const std::string &name);
 	Cat(const Cat &copy);
-	Cat& operator=(Cat& copy);
+	Cat& operator=(const Cat& copy);
 	virtual ~Cat(void);
-	std::string getName(void);
-	void makeSound(void) const {std::cout << "Meow\n";};
+	void makeSound(void) const;
+	std::string getType(void) const;
+	void setIdea(const std::string& idea);
+	std::string getIdea(const int ideaIndex) const;
 };
-
-std::ostream& operator<<(std::ostream &o, Cat &cat);
 
 #endif
