@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 21:16:43 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 11:21:55 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:47:44 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,6 @@ Cat::~Cat(void)
 Cat& Cat::operator=(Cat& copy)
 {
 	if (this != &copy)
-		this->_type = copy.getName();
+		this->_type = copy.getType();
 	return *this;
-}
-
-std::string	Cat::getName(void)
-{
-	return this->_type;
 }

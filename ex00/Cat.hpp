@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:17:36 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 11:19:39 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:47:54 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Cat : public Animal
 	Cat(const Cat &copy);
 	Cat& operator=(Cat& copy);
 	virtual ~Cat(void);
-	std::string getName(void);
 };
 
 #endif

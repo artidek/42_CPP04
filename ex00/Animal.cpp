@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:59:21 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 11:18:05 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:48:22 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Animal& Animal::operator=(const Animal& copy)
 
 Animal::Animal(const Animal& copy)
 {
-	*this = copy;
+	this->_type = copy.getType();
 	std::cout << "Animal copy constructor called\n";
 }
 
