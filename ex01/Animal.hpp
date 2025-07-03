@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:34:23 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 23:23:43 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 12:49:58 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Animal
 protected:
 	std::string _type;
 	std::string _sound;
+	Brain* _brain;
+	Brain* getBrain(void) const;
 public:
 	Animal(void);
 	Animal(const std::string& type);
@@ -30,7 +32,8 @@ public:
 	virtual ~Animal(void);
 	virtual void makeSound(void) const;
 	virtual std::string getType(void) const;
-	Brain* _brain;
+	virtual void setIdea(const std::string& idea);
+	virtual std::string getIdea(const int ideaIndex) const;
 };
 
 #endif

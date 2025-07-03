@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:34:23 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 22:37:06 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:13:42 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ protected:
 	std::string _sound;
 public:
 	Animal(void);
-	Animal(const std::string& type);
 	Animal(const Animal& copy);
 	Animal& operator=(const Animal& copy);
 	virtual ~Animal(void);

@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 23:15:21 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 23:30:04 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:07:31 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,27 @@ int main(void)
 
 	for (int i=0; i < 100; i++)
 	{
-		if (i < 49)
+		if (i < 50)
 		{
 			animals[i] = new Cat();
-			animals[i]->_brain->ideas[0] = "Play with plastic bag";
+			animals[i]->setIdea("Play with plastic bag");
 		}
-		if (i > 48)
+		if (i > 49) 
 		{
 			animals[i] = new Dog();
-			animals[i]->_brain->ideas[0] = "Chase squirell";
+			animals[i]->setIdea("Chase squirell");
 		}
 	}
 	for (int i=0; i < 100; i++)
 	{
-		std::cout << "The " << animals[i]->getType() << " has an idea " << animals[i]->_brain->ideas[0] << std::endl;
+		std::cout << "The " << animals[i]->getType() << " has an idea " << animals[i]->getIdea(0) << std::endl;
 		delete animals[i];
 	}
+	Animal* dog = new Dog();
+	Animal* anotherDog = new Dog();
+	anotherDog->setIdea("Cats are evil");
+	dog = anotherDog;
+	std::cout << "The dog address is " << &dog << " and the dog has an idea " << dog->getIdea(0) << std::endl;
+	std::cout << "The another dog address is " << &anotherDog << " and the another dog has an idea " << anotherDog->getIdea(0) << std::endl;
 	return 0;
 }

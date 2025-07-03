@@ -6,20 +6,15 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:59:21 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 22:38:12 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:18:05 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : _type("some"), _sound("Brrrr...")
+Animal::Animal(void) : _type("animal"), _sound("Brrrr...")
 {
 	std::cout << "Animal default constructor called\n";
-}
-
-Animal::Animal(const std::string& type) : _type(type), _sound("Brrrr...")
-{
-	std::cout << "Animal constructor called\n";
 }
 
 Animal& Animal::operator=(const Animal& copy)

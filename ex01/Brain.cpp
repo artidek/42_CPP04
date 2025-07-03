@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:54:06 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/01 23:20:18 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:42:59 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ Brain::~Brain(void)
 Brain& Brain::operator=(const Brain& copy)
 {
 	if (this != &copy)
-		*this = copy;
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = copy.ideas[i];
+	}
 	return *this;
 }
