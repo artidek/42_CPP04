@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 22:11:18 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/04 20:06:17 by aobshatk         ###   ########.fr       */
+/*   Created: 2025/07/04 20:40:36 by aobshatk          #+#    #+#             */
+/*   Updated: 2025/07/04 20:41:24 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#include "Cure.hpp"
 
-#include "ICharacter.hpp"
+Cure::Cure(void) : AMateria(){}
 
-class Character : public ICharacter
+Cure::Cure(std::string const & type) : AMateria(type){}
+
+Cure::Cure(Cure const & copy) : AMateria(copy){}
+
+Cure& Cure::operator=(Cure const & copy)
 {
-public:
-	Character(void);
-	Character(std::string const & name);
-	Character (ICharacter const & copy);
-	Character & operator=(ICharacter const & copy);
-	~Character(void);
-	std::string const & getName();
-	void equip(AMateria *m);
-	void unequip(int idx);
-};
+	if (this != &copy)
+		AMateria::operator=(copy);
+	return *this;
+}
 
-
-#endif
+Cure* Cure::clone(void) const
+{
+	Cure* newCure = new Cure(this->_type);
+	return newCure;
+}

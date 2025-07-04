@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 21:37:18 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/04 20:54:52 by aobshatk         ###   ########.fr       */
+/*   Created: 2025/07/04 20:49:52 by aobshatk          #+#    #+#             */
+/*   Updated: 2025/07/04 20:54:25 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
-ICharacter::ICharacter() : _materias(new AMateria*[4])
+IMateriaSource::IMateriaSource() : _materias(new AMateria*[4])
 {
 }
 
-ICharacter::ICharacter(std::string const & name) : _name(name), _materias(new AMateria*[4])
-{
-}
-
-ICharacter::ICharacter(ICharacter const & copy) : _name(copy.getName())
+IMateriaSource::IMateriaSource(IMateriaSource const & copy)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -29,11 +25,10 @@ ICharacter::ICharacter(ICharacter const & copy) : _name(copy.getName())
 	}
 }
 
-ICharacter & ICharacter::operator=(ICharacter const & copy)
+IMateriaSource & IMateriaSource::operator=(IMateriaSource const & copy)
 {
 	if (this != & copy)
 	{
-		this->_name = copy.getName();
 		for (int i = 0; i < 4; i++)
 		{
 			delete this->_materias[i];
@@ -43,16 +38,10 @@ ICharacter & ICharacter::operator=(ICharacter const & copy)
 	return *this;
 }
 
-ICharacter::~ICharacter(void)
+IMateriaSource::~IMateriaSource(void)
 {
 	for (int i = 0; i < 4; i++)
 	{
 		delete _materias[i];
 	}
-}
-
-void ICharacter::use(int idx, ICharacter & target)
-{
-	if (idx >= 0 && idx < 4 && !this->_materias[idx]->getType().empty())
-		this->_materias[idx]->use(target);
 }

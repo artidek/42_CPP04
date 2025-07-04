@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 18:45:32 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/03 23:54:33 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/04 21:45:28 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 	ICharacter(std::string const & name);
 	ICharacter (ICharacter const & copy);
 	ICharacter & operator=(ICharacter const & copy);
-	~ICharacter(void);
-	virtual std::string const & getName() const = 0;
+	virtual~ICharacter(void);
+	virtual std::string const & getName() const;
 	virtual void equip(AMateria *m) = 0;
 	virtual void unequip(int idx) = 0;
 	virtual void use(int idx, ICharacter& target);

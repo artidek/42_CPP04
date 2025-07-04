@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 22:11:18 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/04 20:06:17 by aobshatk         ###   ########.fr       */
+/*   Created: 2025/07/04 20:38:41 by aobshatk          #+#    #+#             */
+/*   Updated: 2025/07/04 20:40:11 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#ifndef CURE_H
+#define CURE_H
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character : public ICharacter
+class Cure : public AMateria
 {
 public:
-	Character(void);
-	Character(std::string const & name);
-	Character (ICharacter const & copy);
-	Character & operator=(ICharacter const & copy);
-	~Character(void);
-	std::string const & getName();
-	void equip(AMateria *m);
-	void unequip(int idx);
+	Cure(void);
+	Cure(std::string const & type);
+	Cure(Cure const & copy);
+	Cure& operator=(Cure const & copy);
+	virtual ~Cure(void);
+	Cure* clone(void) const;
 };
-
 
 #endif
