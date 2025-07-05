@@ -6,13 +6,13 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:59:12 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/04 21:36:03 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/05 19:44:13 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void)
+AMateria::AMateria(void) : _type("materia")
 {
 }
 

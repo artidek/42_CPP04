@@ -6,7 +6,7 @@
 #    By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/01 21:34:53 by aobshatk          #+#    #+#              #
-#    Updated: 2025/07/04 21:31:03 by aobshatk         ###   ########.fr        #
+#    Updated: 2025/07/05 19:18:16 by aobshatk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 NAME = materias
 
 $(NAME):
-	$(CC) $(CFLAGS) AMateria.cpp Icharacter.cpp Character.cpp Ice.cpp Cure.cpp IMateriaSource.cpp MateriaSource.cpp main.cpp -o $(NAME)
+	$(CC) $(CFLAGS) AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp ICharacter.cpp IMateriaSource.cpp main.cpp -o $(NAME)
 
 all: $(NAME)
 clean:

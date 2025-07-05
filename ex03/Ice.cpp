@@ -6,15 +6,13 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 20:22:16 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/04 20:37:38 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:40:58 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void) : AMateria(){}
-
-Ice::Ice(std::string const & type) : AMateria(type){}
+Ice::Ice(void) : AMateria("ice"){}
 
 Ice::Ice(Ice const & copy) : AMateria(copy){}
 
@@ -25,8 +23,11 @@ Ice& Ice::operator=(Ice const & copy)
 	return *this;
 }
 
+Ice::~Ice(void){}
+
 Ice* Ice::clone(void) const
 {
-	Ice* newIce = new Ice(this->_type);
+	std::cout << "I will clone with type" << this->_type << std::endl;
+	Ice* newIce = new Ice();
 	return newIce;
 }
