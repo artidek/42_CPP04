@@ -6,7 +6,7 @@
 /*   By: aobshatk <aobshatk@42warsaw.pl>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 22:15:11 by aobshatk          #+#    #+#             */
-/*   Updated: 2025/07/05 20:51:11 by aobshatk         ###   ########.fr       */
+/*   Updated: 2025/07/05 22:54:08 by aobshatk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void Character::equip(AMateria *m)
 		if (!this->_materias[i])
 		{
 			this->_materias[i] = m->clone();
+			delete m;
 			return;
 		}	
 	}
